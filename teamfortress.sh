@@ -13,19 +13,21 @@ timesec=$((tf2time - curtime))
 
 if [ "$timesec" -lt 0 ]
 then
-  echo "🔫 It's TF2 time!!"
+  echo "🔫 It's TF2 time!! 😈"
 elif [ "$timesec" -lt 60 ]
 then
-  echo "🔫 TF2 in $timesec seconds"
+  echo "🔫 TF2 in $timesec seconds 😝"
 elif [ "$timesec" -lt 3600 ]
 then
+  secs=$((timesec % 60))
   mins=$((timesec / 60))
-  echo "🔫 TF2 in $mins mins"
+  echo "🔫 TF2 in $mins mins $secs secs 😄"
 elif [ "$timesec" -lt 86400 ]
 then
+  mins=$((timesec / 60 % 60))
   hours=$((timesec / 3600))
-  echo "🔫 TF2 in $hours hours"
+  echo "🔫 TF2 in $hours hours $mins mins 😏"
 else
   days=$((timesec / 86400))
-  echo "🔫 TF2 in $days days"
+  echo "🔫 TF2 in $days days 😔"
 fi
